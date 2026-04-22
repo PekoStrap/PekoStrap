@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PekoStrap | Pekora & Korone Bootstrapper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070707fd;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .btn-gradient {
+            position: relative;
+            padding: 1.5px;
+            border-radius: 9999px;
+            display: inline-flex;
+            overflow: hidden;
+        }
+
+        .btn-gradient::before {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(transparent, #ff0000, #9333ea, #ffffff, transparent);
+            animation: rotate 3s linear infinite;
+        }
+
+        .btn-inner {
+            position: relative;
+            background: #000;
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 9999px;
+            z-index: 2;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-gradient:hover .btn-inner {
+            background: #111;
+            transform: scale(0.98);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .os-label {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 99px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .os-badge {
+            background: linear-gradient(90deg, #ff0000, #9333ea);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.3));
+        }
+
+        select option {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container mx-auto px-6 py-8 flex items-center relative z-10 fade-in">
+        <div class="flex items-center space-x-4">
+            <div class="btn-gradient p-[1px]">
+                <div class="bg-black rounded-full p-1">
+                    <img src="PekoStrap.png" onerror="this.src='https://via.placeholder.com/40'" alt="Logo" class="w-10 h-10 rounded-full object-cover logo-glow">
+                </div>
+            </div>
+            <span class="text-2xl font-black tracking-tighter text-white">PEKOSTRAP</span>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-20 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <h1 class="fade-in text-6xl md:text-8xl font-black mb-6 tracking-tighter">
+                PEKOSTRAP<span class="text-red-600">.</span>
+            </h1>
+            
+            <p class="fade-in text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-medium" id="main-desc">
+                The fastest bootstrapper designed for Pekora and Korone. Simple, secure, and fully automatic.
+            </p>
+
+            
+            <div class="fade-in flex flex-wrap items-center justify-center gap-6 mb-16">
+                <a href="#" class="btn-gradient">
+                    <div class="btn-inner">
+                        <i class="fa-solid fa-download mr-2 text-red-500"></i> <span id="download-text">DOWNLOAD NOW</span>
+                    </div>
+                </a>
+                
+                <a href="https://pekostrap.statuspage.io/" target="_blank" class="btn-gradient">
+                    <div class="btn-inner">
+                        <i class="fa-solid fa-signal mr-2 text-green-500"></i> <span id="status-btn-text">STATUS</span>
+                    </div>
+                </a>
+
+                <a href="https://discord.gg/lunx" target="_blank" class="btn-gradient">
+                    <div class="btn-inner">
+                        <i class="fa-brands fa-discord mr-2 text-purple-500"></i> <span id="community-text">COMMUNITY</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="fade-in flex justify-center" style="animation-delay: 0.4s;">
+                <div class="os-label">
+                    <span class="os-badge">OS</span>
+                    <span id="os-text" class="text-gray-200">Windows 10/11 Works on every PC</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="container mx-auto px-6 py-12 mt-20 fade-in">
+        <div class="flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-8">
+            <div class="bg-white/5 p-1 rounded-xl border border-white/10">
+                <select id="lang-select" class="bg-transparent text-gray-400 text-sm font-bold px-4 py-1 outline-none cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="ja">日本語</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+            <p class="text-gray-600 text-[11px] tracking-widest uppercase font-black mt-4 md:mt-0" id="copyright">
+                &copy; 2026 PEKOSTRAP — All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "main-desc": "The fastest bootstrapper designed for Pekora and Korone. Simple, secure, and fully automatic.",
+                "download-text": "DOWNLOAD NOW",
+                "status-btn-text": "STATUS",
+                "community-text": "COMMUNITY",
+                "os-text": "Windows 10/11 Works on every PC",
+                "copyright": "© 2026 PEKOSTRAP — All Rights Reserved."
+            },
+            tr: {
+                "main-desc": "Pekora ve Korone için tasarlanmış en hızlı bootstrapper. Basit, güvenli ve tamamen otomatik.",
+                "download-text": "HEMEN İNDİR",
+                "status-btn-text": "DURUM",
+                "community-text": "TOPLULUK",
+                "os-text": "Windows 10/11 Her PC'de çalışır",
+                "copyright": "© 2026 PEKOSTRAP — Tüm Hakları Saklıdır."
+            },
+            es: {
+                "main-desc": "El bootstrapper más rápido diseñado para Pekora y Korone. Simple, seguro y totalmente automático.",
+                "download-text": "DESCARGAR AHORA",
+                "status-btn-text": "ESTADO",
+                "community-text": "COMUNIDAD",
+                "os-text": "Windows 10/11 Funciona en todos los PC",
+                "copyright": "© 2026 PEKOSTRAP — Todos los derechos reservados."
+            },
+            fr: {
+                "main-desc": "Le bootstrapper le plus rapide conçu pour Pekora et Korone. Simple, sécurisé et entièrement automatique.",
+                "download-text": "TÉLÉCHARGER",
+                "status-btn-text": "STATUT",
+                "community-text": "COMMUNAUTÉ",
+                "os-text": "Windows 10/11 Fonctionne sur tous les PC",
+                "copyright": "© 2026 PEKOSTRAP — Tous droits réservés."
+            },
+            de: {
+                "main-desc": "Der schnellste Bootstrapper für Pekora und Korone. Einfach, sicher und vollautomatisch.",
+                "download-text": "JETZT DOWNLOADEN",
+                "status-btn-text": "STATUS",
+                "community-text": "COMMUNITY",
+                "os-text": "Windows 10/11 Läuft auf jedem PC",
+                "copyright": "© 2026 PEKOSTRAP — Alle Rechte vorbehalten."
+            },
+            ja: {
+                "main-desc": "PekoraとKoroneのために設計された最速のブートストラッパー。シンプル、安全、そして完全自動。",
+                "download-text": "今すぐダウンロード",
+                "status-btn-text": "ステータス",
+                "community-text": "コミュニティ",
+                "os-text": "Windows 10/11 すべてのPCで動作します",
+                "copyright": "© 2026 PEKOSTRAP — 全著作権所有。"
+            },
+            ru: {
+                "main-desc": "Самый быстрый бутстраппер для Pekora и Korone. Простой, безопасный и полностью автоматический.",
+                "download-text": "СКАЧАТЬ СЕЙЧАС",
+                "status-btn-text": "СТАТУС",
+                "community-text": "СООБЩЕСТВО",
+                "os-text": "Windows 10/11 Работает на любом ПК",
+                "copyright": "© 2026 PEKOSTRAP — Все права защищены."
+            }
+        };
+
+        const langSelect = document.getElementById('lang-select');
+
+        function changeLanguage(lang) {
+            if (!translations[lang]) return;
+            document.documentElement.lang = lang;
+            for (const [id, text] of Object.entries(translations[lang])) {
+                const element = document.getElementById(id);
+                if (element) element.innerText = text;
+            }
+            localStorage.setItem('pekostrap_lang', lang);
+            langSelect.value = lang;
+        }
+
+        langSelect.addEventListener('change', (e) => changeLanguage(e.target.value));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('pekostrap_lang') || 'en';
+            changeLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
