@@ -3,3 +3,6 @@
 ## PekoStrap
  welcome to PekoStrap
 This uses Pekora/Korone files, please don't delete Korone! Also, the opening animation will change with optimization. You can create your own templates in future updates, but you can join this Discord server: https://discord.gg/TCSkm6cee7 and publish your template in upcoming updates on our server. Since it's not available yet, you can follow us on Discord for quick access and also show that you're playing on Discord. I'll add everything soon, don't worry.
+
+
+# the project cancalled
